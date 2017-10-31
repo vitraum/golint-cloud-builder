@@ -16,6 +16,6 @@
 . /builder/prepare_workspace.inc
 prepare_workspace || exit
 shadow_workspace="./gopath/src/$PROJECT_ROOT"
-echo "Running: golint ./... inside shadow workspace $shadow_workspace"
+echo "Running: go vet ./... inside shadow workspace $shadow_workspace"
 cd $shadow_workspace
-golint $(go list ./...)
+go vet ./...

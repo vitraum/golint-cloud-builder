@@ -1,8 +1,20 @@
 # golint build step for Google Container Builder
 
 code was lifted from https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/go
-
 and slightly modified to install golint and call it
+
+# cloudbuild.yaml
+
+substitute your package below (use go import path) and use like so:
+
+```yaml
+steps:
+- name: 'vitraum/golint-cloud-builder'
+  env: ['PROJECT_ROOT=<<PACKAGE>>']
+- name: 'vitraum/golint-cloud-builder'
+  cmd: '/builder/govet.ash'
+  env: ['PROJECT_ROOT=<<PACKAGE>>']
+```
 
 ## LICENSE
 

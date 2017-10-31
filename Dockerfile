@@ -14,7 +14,7 @@ RUN mkdir /builder
 
 COPY go_workspace.go prepare_workspace.inc /builder/
 
-COPY golint.ash /builder/bin/
+COPY golint.ash govet.ash /builder/bin/
 ENV PATH=/builder/bin:$PATH
 
 ENTRYPOINT ["golint.ash"]
