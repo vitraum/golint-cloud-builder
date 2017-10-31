@@ -12,7 +12,7 @@ steps:
 - name: 'vitraum/golint-cloud-builder'
   env: ['PROJECT_ROOT=<<PACKAGE>>']
 - name: 'vitraum/golint-cloud-builder'
-  cmd: '/builder/govet.ash'
+  entrypoint: '/builder/govet.ash'
   env: ['PROJECT_ROOT=<<PACKAGE>>']
 ```
 
