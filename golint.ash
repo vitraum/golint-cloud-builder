@@ -15,5 +15,7 @@
 # limitations under the License.
 . /builder/prepare_workspace.inc
 prepare_workspace || exit
-echo "Running: golint $@"
+shadow_workspace="./gopath/src/$PROJECT_ROOT"
+echo "Running: golint $@ inside shadow workspace $shadow_workspace"
+cd $shadow_workspace
 golint "$@"
